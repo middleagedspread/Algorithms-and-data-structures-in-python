@@ -1,4 +1,6 @@
 
+# uses a single loop through the numbers, doing two comparisons per item (~2n operations)
+
 def max_pairwise_product_fast(number_list): #a faster algorithm, requires n comparisons
     # parameter is a list of integers
     n = len(number_list)
@@ -12,10 +14,10 @@ def max_pairwise_product_fast(number_list): #a faster algorithm, requires n comp
     else:
         biggest, second_biggest = number_list[1],  number_list[0]
     
-    for i in range(2,n): #compare biggest to remaining elements
-        if number_list[i] >= biggest:
+    for i in range(2,n): #compare biggest to remaining eleements
+        if number_list[i] >= biggest: # n-2 comparisons
             second_biggest, biggest = biggest, number_list[i]
-        elif number_list[i] > second_biggest:
+        elif number_list[i] > second_biggest: # another n-2 comparisons
             second_biggest = number_list[i]
     return biggest * second_biggest
 
