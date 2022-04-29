@@ -1,10 +1,8 @@
 def max_pairwise_product(number_list):
-    biggest = max(number_list[0], number_list[1])
-    second_biggest = min(number_list[0], number_list[1])
-    for number in number_list:
-        if biggest < number:
-            second_biggest = biggest
-            biggest = number
+    n = len(number_list)
+    number_list.sort()
+    biggest = number_list[n-1]
+    second_biggest = number_list[n-2]
     return biggest * second_biggest
 
 if __name__ == '__main__':
