@@ -28,12 +28,12 @@ def max_pairwise_product_fast(number_list): #a faster algorithm, requires n comp
             second_biggest = number_list[i]
     return biggest * second_biggest
 
-def stress_test(N, M):
+def stress_test(array_size, max_number):
     while True:
-        n = random.randint(2,N)
+        n = random.randint(2,array_size)
         test_nums = []
         for i in range(0,n):
-            test_nums.append(random.randint(0,M))
+            test_nums.append(random.randint(0,max_number))
         print(test_nums)
         result1 = max_pairwise_product_sort(test_nums)
         result2 = max_pairwise_product_fast(test_nums)
